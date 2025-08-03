@@ -6,7 +6,10 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <Button size="small" @click="toggleDark()">
-    {{ isDark ? 'Light' : 'Dark' }}
-  </Button>
+  <Button
+    size="small"
+    :icon="isDark ? 'pi pi-sun' : 'pi pi-moon'"
+    aria-label="Toggle theme"
+    @click="toggleDark()"
+  />
 </template>

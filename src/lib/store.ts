@@ -2,6 +2,7 @@ import { createStore } from 'vuex';
 import type { Post } from './api.ts';
 
 export interface State {
+  postsPerPage: number;
   currentPage: number;
   totalPages: number;
   previousPage?: number;
@@ -10,6 +11,7 @@ export interface State {
 }
 
 const state: State = {
+  postsPerPage: 10,
   currentPage: 1,
   totalPages: 1,
   previousPage: undefined,

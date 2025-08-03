@@ -11,6 +11,7 @@ const isFullBody = ref<boolean>(false);
 function toggleBody() {
   isFullBody.value = !isFullBody.value;
 }
+
 function truncateString(str: string, maxLength: number) {
   if (str.length <= maxLength) return str;
   return str.substring(0, str.lastIndexOf(' ', maxLength));
@@ -20,8 +21,12 @@ function truncateString(str: string, maxLength: number) {
 <template>
   <li>
     <Card>
-      <template #title>{{ post.title }}</template>
-      <template #subtitle>{{ post.author }}</template>
+      <template #title>
+        {{ post.title }}
+      </template>
+      <template #subtitle>
+        {{ post.author }}
+      </template>
       <template #content>
         <p>
           {{ isFullBody ? post.body : truncateString(post.body, 100) }}

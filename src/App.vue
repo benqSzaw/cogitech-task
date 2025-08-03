@@ -2,19 +2,22 @@
 import ConfirmDialog from '@/volt/ConfirmDialog.vue';
 import Toast from '@/volt/Toast.vue';
 import PostsGrid from '@/components/posts-grid.vue';
-import DarkModeButton from '@/components/dark-mode-button.vue';
+import Header from '@/components/header.vue';
+import Footer from '@/components/footer.vue';
+import PostsFallback from '@/components/posts-fallback.vue';
 </script>
 
-<template>
-  <main class="mx-auto max-w-7xl p-2">
-    <DarkModeButton />
+<template class="max-w-2xl">
+  <Header />
+  <main class="container space-y-4">
     <Suspense>
       <PostsGrid />
       <template #fallback>
-        <div>Loading posts...</div>
+        <PostsFallback />
       </template>
     </Suspense>
   </main>
+  <Footer />
   <Toast />
   <ConfirmDialog />
 </template>
