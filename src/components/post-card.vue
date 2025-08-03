@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Post } from '@/lib/api.ts';
-import Card from '@/volt/Card.vue';
 import { ref } from 'vue';
+import Card from '@/volt/Card.vue';
 import SecondaryButton from '@/volt/SecondaryButton.vue';
 import PostDelete from '@/components/post-delete.vue';
+import type { Post } from '@/lib/api.ts';
 
 const { post } = defineProps<{ post: Post }>();
 const isFullBody = ref<boolean>(false);

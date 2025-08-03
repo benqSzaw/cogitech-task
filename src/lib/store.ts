@@ -22,9 +22,7 @@ const mutations = {
     state.posts = posts;
   },
   deletePost(state: State, id: number) {
-    console.log(state.posts);
     state.posts = state.posts.filter(post => post.id !== id);
-    console.log(state.posts);
   },
 };
 
