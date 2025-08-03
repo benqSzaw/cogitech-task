@@ -10,6 +10,7 @@ const { post } = defineProps<{ post: Post }>();
   <li>
     <Card>
       <template #title>{{ post.title }}</template>
+      <template #subtitle>{{ post.author }}</template>
       <template #content>
         <p>
           {{ post.body }}
