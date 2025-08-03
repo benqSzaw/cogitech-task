@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import PostsGrid from '@/components/posts-grid.vue';
+import ConfirmDialog from '@/volt/ConfirmDialog.vue';
+import Toast from '@/volt/Toast.vue';
 </script>
 
 <template>
@@ -11,4 +13,6 @@ import PostsGrid from '@/components/posts-grid.vue';
       </template>
     </Suspense>
   </main>
+  <Toast />
+  <ConfirmDialog />
 </template>

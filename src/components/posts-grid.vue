@@ -17,7 +17,7 @@ store.commit('setPosts', data.value);
     <ul
       class="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 md:grid-cols-3"
     >
-      <PostCard v-for="post in data" :post="post" :key="post.id" />
+      <PostCard v-for="post in store.state.posts" :post="post" :key="post.id" />
     </ul>
   </div>
 </template>

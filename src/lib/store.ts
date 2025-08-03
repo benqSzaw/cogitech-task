@@ -22,21 +22,13 @@ const mutations = {
     state.posts = posts;
   },
   deletePost(state: State, id: number) {
+    console.log(state.posts);
     state.posts = state.posts.filter(post => post.id !== id);
-  },
-};
-
-const actions = {
-  setPosts({ commit }: { commit: Function }, posts: Post[]) {
-    commit('setPosts', posts);
-  },
-  deletePost({ commit }: { commit: Function }, id: number) {
-    commit('deletePost', id);
+    console.log(state.posts);
   },
 };
 
 export default createStore<State>({
   state,
   mutations,
-  actions,
 });

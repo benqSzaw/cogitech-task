@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { Post } from '@/lib/api.ts';
 import Card from '@/volt/Card.vue';
-import Button from '@/volt/Button.vue';
 import { ref } from 'vue';
+import SecondaryButton from '@/volt/SecondaryButton.vue';
+import PostDelete from '@/components/post-delete.vue';
 
 const { post } = defineProps<{ post: Post }>();
 const isFullBody = ref<boolean>(false);
@@ -28,13 +29,13 @@ function truncateString(str: string, maxLength: number) {
       </template>
       <template #footer>
         <div class="flex flex-1 gap-4 self-end justify-self-end">
-          <Button
+          <SecondaryButton
             :label="isFullBody ? 'Show Less' : 'Show More'"
             size="small"
             variant="text"
             @click="toggleBody"
           />
-          <Button label="Delete" size="small" variant="outlined" />
+          <PostDelete :post-id="post.id" />
         </div>
       </template>
     </Card>
