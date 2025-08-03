@@ -9,13 +9,4 @@ export type Post = {
 
 const API_BASE_URL = 'https://jsonplaceholder.typicode.com/posts/';
 
-export const getPosts = () => {
-  const { isFetching, error, data } = useFetch<Post[]>(API_BASE_URL)
-    .get()
-    .json();
-  return {
-    isFetching,
-    error,
-    data: data.value,
-  };
-};
+export const getPosts = () => useFetch<Post[]>(API_BASE_URL).get().json();
