@@ -29,11 +29,11 @@ const theme = ref<CardPassThroughOptions>({
         text-surface-700 dark:text-surface-0
         shadow-md size-full`,
   header: ``,
-  body: `p-5 flex flex-col gap-2 justify-between size-full`,
+  body: `p-5 flex flex-col gap-2  size-full`,
   caption: `flex flex-col gap-2`,
   title: `font-medium text-xl`,
   subtitle: `text-surface-500 dark:text-surface-400`,
   content: ``,
-  footer: ``,
+  footer: `mt-auto`,
 });
 </script>
