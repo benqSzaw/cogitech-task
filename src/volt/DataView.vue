@@ -99,8 +99,7 @@ defineProps<Props>();
 
 const theme = ref<DataViewPassThroughOptions>({
   root: `border-none`,
-  header: `py-3 px-4 border-b
-        text-surface-700 dark:text-surface-0`,
+  header: `py-3 px-4`,
   content: ``,
   emptyMessage: ``,
   footer: `py-3 px-4`,

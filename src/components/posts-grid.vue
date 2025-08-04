@@ -8,6 +8,13 @@ import DataView from '@/volt/DataView.vue';
 const store = useStore();
 const { data, error } = await getPosts();
 store.commit('setPosts', data.value);
+
+function onPageChange() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
 </script>
 
 <template>
@@ -18,7 +25,13 @@ store.commit('setPosts', data.value);
     :paginator="true"
     :rows="10"
     layout="grid"
+    @page="onPageChange"
   >
+    <template #header>
+      <div class="flex justify-end">
+        <p>{{ store.state.posts.length }} posts</p>
+      </div>
+    </template>
     <template #grid="slotProps">
       <div
         class="grid grid-cols-1 items-stretch gap-4 py-4 sm:grid-cols-2 md:grid-cols-3"
