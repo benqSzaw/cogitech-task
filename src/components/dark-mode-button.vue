@@ -7,6 +7,7 @@ const toggleDark = useToggle(isDark);
 
 <template>
   <Button
+    class="!size-8"
     size="small"
     :icon="isDark ? 'pi pi-sun' : 'pi pi-moon'"
     aria-label="Toggle theme"

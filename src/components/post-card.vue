@@ -19,28 +19,30 @@ function truncateString(str: string, maxLength: number) {
 </script>
 
 <template>
-  <Card>
-    <template #title>
-      {{ post.title }}
-    </template>
-    <template #subtitle>
-      {{ post.author }}
-    </template>
-    <template #content>
-      <p>
-        {{ isFullBody ? post.body : truncateString(post.body, 100) }}
-      </p>
-    </template>
-    <template #footer>
-      <div class="flex flex-1 gap-4 self-end justify-self-end">
-        <SecondaryButton
-          :label="isFullBody ? 'Show Less' : 'Show More'"
-          size="small"
-          variant="text"
-          @click="toggleBody"
-        />
-        <PostDelete :post-id="post.id" />
-      </div>
-    </template>
-  </Card>
+  <li>
+    <Card>
+      <template #title>
+        {{ post.title }}
+      </template>
+      <template #subtitle>
+        {{ post.author }}
+      </template>
+      <template #content>
+        <p>
+          {{ isFullBody ? post.body : truncateString(post.body, 100) }}
+        </p>
+      </template>
+      <template #footer>
+        <div class="flex flex-1 gap-4 self-end justify-self-end">
+          <SecondaryButton
+            :label="isFullBody ? 'Show Less' : 'Show More'"
+            size="small"
+            variant="text"
+            @click="toggleBody"
+          />
+          <PostDelete :post-id="post.id" />
+        </div>
+      </template>
+    </Card>
+  </li>
 </template>

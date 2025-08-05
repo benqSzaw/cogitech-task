@@ -39,7 +39,7 @@
             <AngleLeftIcon />
           </template>
         </SecondaryButton>
-        <div class="hidden items-center justify-center gap-2 sm:flex">
+        <div class="flex items-center justify-center gap-2">
           <SecondaryButton
             v-for="pageLink of pageLinks"
             :key="pageLink"
@@ -47,8 +47,9 @@
             rounded
             @click="() => changePageCallback(pageLink - 1)"
             :class="[
-              'h-10 min-w-10 shrink-0',
+              'h-10 min-w-10 shrink-0 sm:flex',
               { 'bg-highlight!': page + 1 === pageLink },
+              { 'hidden! sm:flex!': page + 1 !== pageLink },
             ]"
             >{{ pageLink }}
           </SecondaryButton>

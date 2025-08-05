@@ -77,8 +77,12 @@
 
 @layer base {
   body {
-    @apply bg-surface-50 dark:bg-surface-950 text-color;
+    @apply background-color text-color;
   }
+}
+
+@utility background-color {
+  @apply bg-surface-50 dark:bg-surface-950;
 }
 
 @utility container {

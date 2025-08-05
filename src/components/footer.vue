@@ -1,5 +1,7 @@
 <template>
-  <footer class="container py-4 text-center">
+  <footer
+    class="background-color relative z-20 container mt-10 py-4 text-center"
+  >
     <a
       href="https://szawracki.pl"
       target="_blank"

@@ -7,9 +7,9 @@ import Footer from '@/components/footer.vue';
 import PostsFallback from '@/components/posts-fallback.vue';
 </script>
 
-<template class="max-w-2xl">
+<template>
   <Header />
-  <main class="container space-y-4">
+  <main class="container min-h-screen space-y-4">
     <Suspense>
       <PostsGrid />
       <template #fallback>

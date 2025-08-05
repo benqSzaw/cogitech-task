@@ -26,18 +26,24 @@ function onPageChange() {
     :rows="10"
     layout="grid"
     @page="onPageChange"
+    :always-show-paginator="true"
+    :pt="{
+      pcPaginator: {
+        root: 'fixed left-0 right-0 py-2 background-color bottom-0',
+      },
+    }"
   >
     <template #header>
-      <div class="flex justify-end">
+      <div class="flex justify-end gap-2">
         <p>{{ store.state.posts.length }} posts</p>
       </div>
     </template>
     <template #grid="slotProps">
-      <div
+      <ul
         class="grid grid-cols-1 items-stretch gap-4 py-4 sm:grid-cols-2 md:grid-cols-3"
       >
         <PostCard v-for="post in slotProps.items" :post="post" :key="post.id" />
-      </div>
+      </ul>
     </template>
   </DataView>
 </template>
